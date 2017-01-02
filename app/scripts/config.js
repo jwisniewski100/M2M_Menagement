@@ -17,7 +17,7 @@ function config($stateProvider, $urlRouterProvider) {
             url: "/index",
             templateUrl: "views/common/content.html",
         })
-	.state('index.minor', {
+	    .state('index.minor', {
             url: "/minor",
             templateUrl: "views/minor.html",
             data: { pageTitle: 'Example view' }
