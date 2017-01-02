@@ -1,0 +1,70 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: '<Projects>'
+host: cdam.telecom.comarch:9000
+basePath: /api/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /projects/{id}<.+>/density:
+    get:
+      description: 
+        Gets project destination.
+      operationId: projectDestination
+      parameters:
+        - name: id
+          in: path
+          description: Project id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            title: Information
+            type: object
+            items:
+              title: Account
+              type: object
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error' 
+
+  /projects/{id}<.+>:
+    get:
+      description: 
+        Gets action by id.
+      operationId: getAction
+      parameters:
+        - name: id
+          in: path
+          description: Action id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            title: Information
+            type: object
+            items:
+              title: Account
+              type: object
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error' 
+            
+ 
+definitions : 
+   Error:
+    type: object
+    required:
+      - message
+    properties:
+      message:
+        type: string

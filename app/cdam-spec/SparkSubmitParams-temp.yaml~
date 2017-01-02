@@ -1,0 +1,101 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: '<SparkSubmitParams>'
+host: cdam.telecom.comarch:9000
+basePath: /api/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /sparkSubmitParams/{submitParamsId}:
+    get:
+      description: 
+        Gets Process Submit Params.
+      operationId: getProcessSubmitParams
+      parameters:
+        - name: submitParamsId
+          in: path
+          description: Parameter's id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            title: Information
+            type: object
+            items:
+              title: Account
+              type: object
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error' 
+            
+  /sparkSubmitParams/{submitParamsId}/updateSparkProperties:
+    post:
+      description: 
+        Updates Spark Properties
+      operationId: updateSparkProperties
+      parameters:
+        - name: submitParamsId
+          in: path
+          description: Parameter's id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Parameter updated successfully
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /sparkSubmitParams/{submitParamsId}/updateEnvironmentVariables:
+    post:
+      description: 
+        Updates Spark Environment Variables.
+      operationId: updateEnvironmentVariables
+      parameters:
+        - name: submitParamsId
+          in: path
+          description: Environment Variable id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Variable updated successfully
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+  /sparkSubmitParams/{submitParamsId}/updateBasicSettings:
+    post:
+      description: 
+        Updates Basic Settings.
+      operationId: updateBasicSettings
+      parameters:
+        - name: submitParamsId
+          in: path
+          description: Setting id
+          required: true
+          type: string
+      responses:
+        200:
+          description: Settings updated successfully
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+definitions : 
+   Error:
+    type: object
+    required:
+      - message
+    properties:
+      message:
+        type: string

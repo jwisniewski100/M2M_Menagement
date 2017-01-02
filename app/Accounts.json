@@ -1,0 +1,130 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "<AccountsRoutes>"
+    },
+    "host": "cdam.telecom.comarch:9000",
+    "basePath": "/api/v1/",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/accounts": {
+            "get": {
+                "description": "Gets accounts.",
+                "operationId": "getAccounts",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "schema": {
+                            "title": "Account Inf",
+                            "type": "object",
+                            "items": {
+                                "title": "Account",
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Creates a new account",
+                "operationId": "createAccount",
+                "responses": {
+                    "200": {
+                        "description": "Account created successfully"
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/{id}<.+>": {
+            "get": {
+                "description": "Gets accounts by id.\n",
+                "operationId": "getAccountById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Account's id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "schema": {
+                            "title": "Information",
+                            "type": "object",
+                            "items": {
+                                "title": "Account",
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/accounts/{accountId}<.+>/updateCoverage": {
+            "post": {
+                "description": "Creates a new account",
+                "operationId": "createAccount2",
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "Account's id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Account created successfully"
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "type": "object",
+            "required": [
+                "message"
+            ],
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

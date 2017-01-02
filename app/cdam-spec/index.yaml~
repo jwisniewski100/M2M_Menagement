@@ -1,0 +1,19 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: '<SparkSubmitParams>'
+host: cdam.telecom.comarch:9000
+basePath: /api/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+accounts:
+  operationId: getProcessSubmitParams1
+  $ref: ./Accounts-temp.yaml
+deviceTrajectories:
+  operationId: getProcessSubmitParams2
+  $ref: ./DeviceTrajectories-temp.yaml
+sparkSubmitParams-temp:
+  operationId: getProcessSubmitParams3
+  $ref: ./SparkSubmitParams-temp.yaml

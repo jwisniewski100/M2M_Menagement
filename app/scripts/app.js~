@@ -1,0 +1,25 @@
+/**
+ * INSPINIA - Responsive Admin Theme
+ * Copyright 2014 Webapplayers.com
+ *
+ */
+(function () {
+    angular.module('inspinia', [
+	'ngCookies'        
+	'ui.router',                    // Routing
+        'ui.bootstrap',                 // Bootstrap
+        'ngSanitize',        
+        'swaggerUi'
+    ]);
+     /*       .controller('MyCtrl', function($scope){
+                // init form
+                $scope.isLoading = false;
+                $scope.url = $scope.swaggerUrl = 'http://petstore.swagger.io/v2/swagger.json';
+                // error management
+                $scope.myErrorHandler = function(data, status){
+                    alert('failed to load swagger: '+status+'   '+data);
+                };
+            });*/
+
+
+})();

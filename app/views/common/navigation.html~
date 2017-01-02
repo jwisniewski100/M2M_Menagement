@@ -1,0 +1,29 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+
+            <li ui-sref-active="active">
+                <a ui-sref="index.minor" > <span class="nav-label">Start</span> </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/Accounts.json')"> <span class="nav-label">Accounts</span> </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/DeviceActivities.json')"> <span class="nav-label">Device Activities</span></a>
+            </li>
+		<li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/Project.json')"> <span class="nav-label">Project</span></a>
+            </li>
+<li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/SparkJobActions.json')"> <span class="nav-label">Spark Job Actions</span></a>
+            </li>
+<li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/SparkJobs.json')"> <span class="nav-label">Spark Jobs</span></a>
+            </li>
+<li ui-sref-active="active">
+                <a ui-sref="index.main" ng-click="main.setNewUrl('http://localhost:9000/cdam-spec/UsersRoutes.json')"> <span class="nav-label">User Routes</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
